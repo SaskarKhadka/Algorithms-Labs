@@ -25,8 +25,8 @@ def search_data(bestCase: bool):
         # For binary search, best case = middle data and worst case = invalid data
         data["binary_input_size"].append(size)
         start_time = time.time()
-        result = binary_search(test_data, len(test_data) - 1 //
-                               2 if bestCase else size + 1)
+        result = binary_search(
+            test_data, (len(test_data) - 1) // 2 if bestCase else size + 1)
         data["binary_exec_time"].append((time.time() - start_time) * 1000)
 
     return data
