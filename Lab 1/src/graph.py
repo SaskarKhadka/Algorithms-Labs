@@ -22,11 +22,11 @@ def search_data(bestCase: bool):
         result = linear_search(test_data, 0 if bestCase else size + 1)
         data["linear_exec_time"].append((time.time() - start_time) * 1000)
 
-        # For binary search, best case = middle data and worst case = invalid data
+        # For binary search, best case = middle data and worst case = largest
         data["binary_input_size"].append(size)
         start_time = time.time()
         result = binary_search(
-            test_data, (len(test_data) - 1) // 2 if bestCase else size + 1)
+            test_data, (len(test_data) - 1) // 2 if bestCase else size)
         data["binary_exec_time"].append((time.time() - start_time) * 1000)
 
     return data
